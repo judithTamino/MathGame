@@ -3,12 +3,15 @@ const numOne = document.getElementById("number-1"),
   numTwo = document.getElementById("number-2");
 const operator = document.querySelector(".math-operator");
 const userAnswer = document.getElementById("user-answer");
+// const range = parseInt(document.getElementById("range").value);
 let score = 0, correctAnswer;
 
 // func => generate random numbers between 1-10
 const randomNumbers = () => {
-  numOne.innerText = Math.floor(Math.random() * 10 + 1);
-  numTwo.innerText = Math.floor(Math.random() * 10 + 1);
+  const range = parseInt(document.getElementById("range").value);
+
+  numOne.innerText = Math.floor(Math.random() * range + 1);
+  numTwo.innerText = Math.floor(Math.random() * range + 1);
 }
 
 // func => check if the user answer is correct
@@ -19,8 +22,8 @@ const check = () => {
     score = 10;
   else score = 0;
 
-  randomNumbers();
   displayHistory();
+  randomNumbers();
   userAnswer.value = "";
 }
 
@@ -37,3 +40,4 @@ const displayHistory = () => {
 }
 
 randomNumbers();
+

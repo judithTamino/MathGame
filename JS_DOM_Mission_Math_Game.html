@@ -12,6 +12,20 @@
     <div class="container">
       <h1>Math Game</h1>
 
+      <div class="game-options">
+        <h2>Game Options</h2>
+        <div class="input-container">
+          <div class="input-group">
+            <label for="">choose range</label>
+            <select id="range" class="range" onchange="randomNumbers()">
+              <option value="10">1-10</option>
+              <option value="100">1-100</option>
+              <option value="5000">1-5000</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
       <div class="question-section">
         <div class="question-card">
           <span class="number" id="number-1"></span>
