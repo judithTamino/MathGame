@@ -16,11 +16,21 @@
         <h2>Game Options</h2>
         <div class="input-container">
           <div class="input-group">
-            <label for="">choose range</label>
-            <select id="range" class="range" onchange="randomNumbers()">
+            <label for="input-range">choose range</label>
+            <select id="input-range" class="range" onchange="randomNumbers()">
               <option value="10">1-10</option>
               <option value="100">1-100</option>
               <option value="5000">1-5000</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="input-operator">choose operator</label>
+            <select id="input-operator" class="range" onchange="changeOperator()">
+              <option value="+">addition (+)</option>
+              <option value="-">subtraction (-)</option>
+              <option value="*">multiplication (*)</option>
+              <option value="/">division (/)</option>
             </select>
           </div>
         </div>
