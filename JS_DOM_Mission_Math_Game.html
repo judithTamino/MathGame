@@ -5,45 +5,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Math Game</title>
+
+  <!--=============== CSS ===============-->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <div class="math-game">
-    <div class="container">
+  <div class="container">
+    <div class="math-game">
       <h1>Math Game</h1>
 
       <div class="game-options">
-        <h2>Game Options</h2>
-        <div class="input-container">
-          <div class="input-group">
-            <label for="input-range">choose range</label>
-            <select id="input-range" class="range" onchange="randomNumbers()">
-              <option value="10">1-10</option>
-              <option value="100">1-100</option>
-              <option value="5000">1-5000</option>
-            </select>
-          </div>
+        <div class="input-group">
+          <label for="input-range">choose range</label>
+          <select id="input-range" class="range" onchange="randomNumbers()">
+            <option value="10">1-10</option>
+            <option value="100">1-100</option>
+            <option value="5000">1-5000</option>
+          </select>
+        </div>
 
-          <div class="input-group">
-            <label for="input-operator">choose operator</label>
-            <select id="input-operator" class="range" onchange="changeOperator()">
-              <option value="+">addition (+)</option>
-              <option value="-">subtraction (-)</option>
-              <option value="*">multiplication (*)</option>
-              <option value="/">division (/)</option>
-            </select>
-          </div>
+        <div class="input-group">
+          <label for="input-operator">choose operator</label>
+          <select id="input-operator" class="range" onchange="changeOperator()">
+            <option value="+">addition (+)</option>
+            <option value="-">subtraction (-)</option>
+            <option value="*">multiplication (*)</option>
+            <option value="/">division (/)</option>
+          </select>
         </div>
       </div>
 
-      <div class="question-section">
-        <div class="question-card">
-          <span class="number" id="number-1"></span>
-          <span class="operator math-operator">+</span>
-          <span class="number" id="number-2"></span>
-          <span class="operator equal-operator">=</span>
-          <input type="number" id="user-answer">
-        </div>
+      <div class="question-card">
+        <span class="number" id="number-1"></span>
+        <span class="operator math-operator">+</span>
+        <span class="number" id="number-2"></span>
+        <span class="operator equal-operator">=</span>
+        <input type="number" id="user-answer">
         <button class="btn" onclick="check()">check</button>
       </div>
 

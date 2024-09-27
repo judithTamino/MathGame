@@ -39,11 +39,12 @@ const displayHistory = () => {
   `;
 }
 
-// func => change operator
+// func => change operator on screen
 const changeOperator = () => {
   operator.innerHTML = inputOperator.value;
 }
 
+// func => calculate the answer dependent on the choosen operator
 const calculateAnswer = () => {
   switch (inputOperator.value) {
     case "+":
