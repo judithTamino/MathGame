@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Game</title>
+</head>
+
+<body>
+  <div class="math-game">
+    <div class="container">
+      <h1>Math Game</h1>
+
+      <div class="question-section">
+        <div class="question-card">
+          <span class="number" id="number-1"></span>
+          <span class="operator math-operator">+</span>
+          <span class="number" id="number-2"></span>
+          <span class="operator equal-operator">=</span>
+          <input type="number" id="user-answer">
+        </div>
+        <button class="btn" onclick="check()">check</button>
+      </div>
+
+      <table class="game-history">
+        <thead>
+          <th>exercise</th>
+          <th>correct answer</th>
+          <th>your answer</th>
+          <th>score</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/JS_DOM_Mission_Math_Game.js"></script>
+</body>
+
+</html>
