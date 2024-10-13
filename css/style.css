@@ -27,7 +27,6 @@ body {
 }
 
 body,
-input,
 select,
 button {
   font-family: "Montserrat", sans-serif;
@@ -47,9 +46,8 @@ button {
 }
 
 .math-game {
-  max-width: 540px;
+  max-width: 600px;
   padding-top: 3.2rem;
-  background-image: url("/image/addition-bg.png");
   background-repeat: no-repeat;
 }
 
@@ -76,46 +74,156 @@ button {
   gap: .8rem;
 }
 
-.input-group select {
+.input-group select,
+.question-card input {
   border: 1px solid var(--border-color);
-  border-radius: 1rem;
-  padding-inline: .2rem 2.4rem;
-  padding-block: .8rem;
+  border-radius: .5rem;
+  padding: .4rem .8rem;
+}
+
+.input-group select {
   font-size: 1.6rem;
 }
 
 .question-card {
-  display: grid;
-  justify-items: center;
-  gap: 1.2rem;
-}
-
-.question-card span,
-.question-card input {
-  font-size: 5.2rem;
-  padding: 6.4rem 1.6rem;
-  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+  font-size: 2.4rem;
   font-family: "Mitr", sans-serif;
-  font-weight: 500;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-  rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  background-color: #fff;
-  border: 2px solid;
 }
 
 .question-card input {
-  width: 100%;
+  width: 40%;
+  font-size: 2.4rem;
+  font-family: "Mitr", sans-serif;
 }
 
-#number-1 {
-  border-color: #cc5de8;
- /* border: .5rem solid #cc5de8; */
-}
-
-
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.btn {
+  width: 100%;
+  padding-block: 1.2rem;
+  border-radius: .5rem;
+  /* background: linear-gradient(90deg, #845ef7, #cc5de8, #f06595, #ff6b6b); */
+  /* color: #fff; */
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-bottom: 2.4rem;
+  font-weight: 700;
+  transition: all .4s;
+}
+
+.game-history, th, td {
+  border: 1px solid var(--border-color);
+  padding: .8rem .4rem;
+}
+
+.game-history {
+  visibility: hidden;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.game-history thead th {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.show-table {
+  visibility: visible;
+}
+
+/*=============== ADDITION ===============*/
+.addition {
+  background-image: url("/image/addition-bg.png");
+}
+
+.addition .btn {
+  background-color: #cc5de8;
+  color: #faeffd;
+}
+
+.addition .btn:hover {
+  background-color: #b854d1;
+}
+
+.addition .game-history thead {
+  background-color: #f0cef8;
+  color: #140917;
+}
+
+/*=============== SUBTRACTION ===============*/
+.subtraction {
+  background-image: url("/image/subtraction-bg.png");
+}
+
+.subtraction .btn {
+  background-color: #ff6b6b;
+  color: #fff0f0;
+}
+
+.subtraction .btn:hover {
+  background-color: #e66060;
+}
+
+.subtraction .game-history thead {
+  background-color: #fff0f0;
+  color: #190b0b;
+}
+
+/*=============== MULTI ===============*/
+.multi {
+  background-image: url("/image/multiplication-bg.png");
+}
+
+.multi .btn {
+  background-color: #f06595;
+  color: #fef0f4;
+}
+
+.multi .btn:hover {
+  background-color: #c05177;
+}
+
+.multi .game-history thead {
+  background-color: #fef0f4;
+  color: #180a0f;
+}
+
+/*=============== DIVISION ===============*/
+.division {
+  background-image: url("/image/division-bg.png");
+}
+
+.division .btn {
+  background-color: #845ef7;
+  color: #f3effe;
+}
+
+.division .btn:hover {
+  background-color: #6a4bc6;
+}
+
+.division .game-history thead {
+  background-color: #f3effe;
+  color: #0d0919;
+}
+
+/*=============== BREAKPOINTS===============*/
+@media only screen and (min-width: 620px) {
+  .container {
+    padding: 3.2rem 4.8rem 0;
+  }
+
+  .math-game {
+    margin: 1rem auto;
+    border-radius: 1rem ;
+  }
 }

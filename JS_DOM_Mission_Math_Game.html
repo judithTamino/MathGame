@@ -12,7 +12,6 @@
 
 <body>
   <div class="math-game container addition">
-    <!-- <div class="math-game__container "> -->
       <h1>Math Game</h1>
 
       <div class="game-options">
@@ -38,12 +37,13 @@
 
       <div class="question-card">
         <span class="number" id="number-1"></span>
-        <span class="operator math-operator">+</span>
+        <span class="operator" id="math-operator">+</span>
         <span class="number" id="number-2"></span>
-        <span class="operator equal-operator">=</span>
+        <span class="operator">=</span>
         <input type="number" id="user-answer">
-        <button class="btn" onclick="check()">check</button>
       </div>
+
+      <button class="btn" onclick="check()">check</button>
 
       <table class="game-history">
         <thead>
@@ -52,66 +52,9 @@
           <th>your answer</th>
           <th>score</th>
         </thead>
-        <tbody></tbody>
+        <tbody id="tbody"></tbody>
       </table>
-    <!-- </div> -->
   </div>
-  <!-- <div class="container addition"> -->
-    <!-- <div class="circle-container">
-      <div class="circle circle-red circle-1"></div>
-      <div class="circle circle-blue circle-3"></div>
-      <div class="circle circle-yellow circle-2"></div>
-      <div class="circle circle-red circle-4"></div> -->
-      <!-- <div class="circle circle-yellow circle-5"></div> -->
-      <!-- <div class="circle circle-blue circle-6"></div> -->
-      <!-- <div class="circle circle-red circle-5"></div> -->
-    <!-- </div> -->
-
-    <!-- <div class="math-game">
-      <h1>Math Game</h1>
-
-      <div class="game-options">
-        <div class="input-group">
-          <label for="input-range">choose range</label>
-          <select id="input-range" class="range" onchange="randomNumbers()">
-            <option value="10">1-10</option>
-            <option value="100">1-100</option>
-            <option value="5000">1-5000</option>
-          </select>
-        </div>
-
-        <div class="input-group">
-          <label for="input-operator">choose operator</label>
-          <select id="input-operator" class="range" onchange="changeOperator()">
-            <option value="+">addition (+)</option>
-            <option value="-">subtraction (-)</option>
-            <option value="*">multiplication (*)</option>
-            <option value="/">division (/)</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="question-card">
-        <span class="number" id="number-1"></span>
-        <span class="operator math-operator">+</span>
-        <span class="number" id="number-2"></span>
-        <span class="operator equal-operator">=</span>
-        <input type="number" id="user-answer">
-        <button class="btn" onclick="check()">check</button>
-      </div>
-
-      <table class="game-history">
-        <thead>
-          <th>exercise</th>
-          <th>correct answer</th>
-          <th>your answer</th>
-          <th>score</th>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div> -->
-  <!-- </div> -->
-
   <script src="js/JS_DOM_Mission_Math_Game.js"></script>
 </body>
 
