@@ -53,6 +53,9 @@ body {
 input, select, button {
   border: none;
   outline: none;
+}
+
+input, select {
   width: 100%;
 }
 
@@ -64,7 +67,7 @@ img {
 
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
-  max-width: 1024px;
+  max-width: 900px;
   margin: 0 2.4rem;
 }
 
@@ -103,7 +106,7 @@ img {
     0.3rem 0.3rem 0 #8b68c8,
     0.4rem 0.4rem 0 #9879ce,
     0.5rem 0.5rem 0 #a589d4;
-    margin-bottom: 3.2rem;
+  margin-bottom: 3.2rem;
 }
 
 .cards-container {
@@ -172,9 +175,10 @@ input::-webkit-inner-spin-button {
 }
 
 .check-btn {
+  width: 150px;
+  height: 50px;
   color: var(--body-color);
   background-color: var(--first-color);
-  padding-block: 1.2rem;
   border-radius: .5rem;
   font-weight: var(--font-semi-bold);
   cursor: pointer;
@@ -201,10 +205,10 @@ input::-webkit-inner-spin-button {
 }
 
 .accordion-header,
-.accordion-content{
+.accordion-content {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .accordion-title {
@@ -215,7 +219,7 @@ input::-webkit-inner-spin-button {
 }
 
 .accordion-arrow {
-  display: inline-flex; 
+  display: inline-flex;
   background-color: var(--first-color-alt);
   padding: .4rem;
   border-radius: .5rem;
@@ -245,8 +249,9 @@ input::-webkit-inner-spin-button {
 
 /*=============== GAME OPTIONS ===============*/
 .options-container {
- display: grid;
- gap: 1.6rem;
+  max-width: 500px;
+  display: grid;
+  gap: 1.6rem;
   /* 12 / 16 / 24 / 32 / 48 */
 }
 
@@ -266,6 +271,51 @@ input::-webkit-inner-spin-button {
   border: 3px solid var(--border-color);
   border-radius: .5rem;
 }
+
+/*=============== BREAKPOINTS===============*/
+@media only screen and (min-width: 540px) {
+  .options-container {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .result-accordion {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.6rem;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .container {
+    margin: 0 5.2rem;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .btn-container {
+    margin-top: 3.2rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .container {
+    margin: 0 auto;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .btn-container {
+    margin-top: 4.4rem;
+  }
+} 
+
 /*
   - spacing (px):
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
@@ -274,216 +324,7 @@ input::-webkit-inner-spin-button {
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
 */
 
-/* :root {
-  --text-color: #313130;
-  --bg-color: #fafafa;
-  --card-color: #f7f5f2;
-  --border-color: #999999;
-}
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.8rem;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-body,
-select,
-button {
-  font-family: "Montserrat", sans-serif;
-}
-
-input,
-select,
-button {
-  border: none;
-  outline: none;
-}
-
-.container {
-  width: 100%;
-  min-height: 100vh;
-  padding: 3.2rem 2.4rem 0;
-}
-
-.math-game {
-  max-width: 600px;
-  padding-top: 3.2rem;
-  background-repeat: no-repeat;
-}
-
-.math-game h1 {
-  margin-bottom: 6.4rem;
-  text-align: center;
-  color: var(--bg-color);
-  font-size: 4.4rem;
-  text-transform: uppercase;
-  font-family: "Mitr", sans-serif;
-  letter-spacing: .4rem;
-}
-
-.game-options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  margin-bottom: 2.4rem;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: .8rem;
-}
-
-.input-group select,
-.question-card input {
-  border: 1px solid var(--border-color);
-  border-radius: .5rem;
-  padding: .4rem .8rem;
-}
-
-.input-group select {
-  font-size: 1.6rem;
-}
-
-.question-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 2.4rem;
-  font-size: 2.4rem;
-  font-family: "Mitr", sans-serif;
-}
-
-.question-card input {
-  width: 40%;
-  font-size: 2.4rem;
-  font-family: "Mitr", sans-serif;
-}
-
-
-
-.btn {
-  width: 100%;
-  padding-block: 1.2rem;
-  border-radius: .5rem;
-  font-size: 1.8rem;
-  cursor: pointer;
-  margin-bottom: 2.4rem;
-  font-weight: 700;
-  transition: all .4s;
-}
-
-.game-history, th, td {
-  border: 1px solid var(--border-color);
-  padding: .8rem .4rem;
-}
-
-.game-history {
-  visibility: hidden;
-  width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-}
-
-.game-history thead th {
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-.show-table {
-  visibility: visible;
-} */
-
-/*=============== ADDITION ===============*/
-/* .addition {
-  background-image: url("/image/addition-bg.png");
-}
-
-.addition .btn {
-  background-color: #cc5de8;
-  color: #faeffd;
-}
-
-.addition .btn:hover {
-  background-color: #b854d1;
-}
-
-.addition .game-history thead {
-  background-color: #f0cef8;
-  color: #140917;
-} */
-
-/*=============== SUBTRACTION ===============*/
-/* .subtraction {
-  background-image: url("/image/subtraction-bg.png");
-}
-
-.subtraction .btn {
-  background-color: #ff6b6b;
-  color: #fff0f0;
-}
-
-.subtraction .btn:hover {
-  background-color: #e66060;
-}
-
-.subtraction .game-history thead {
-  background-color: #fff0f0;
-  color: #190b0b;
-} */
-
-/*=============== MULTI ===============*/
-/* .multi {
-  background-image: url("/image/multiplication-bg.png");
-}
-
-.multi .btn {
-  background-color: #f06595;
-  color: #fef0f4;
-}
-
-.multi .btn:hover {
-  background-color: #c05177;
-}
-
-.multi .game-history thead {
-  background-color: #fef0f4;
-  color: #180a0f;
-} */
-
-/*=============== DIVISION ===============*/
-/* .division {
-  background-image: url("/image/division-bg.png");
-}
-
-.division .btn {
-  background-color: #845ef7;
-  color: #f3effe;
-}
-
-.division .btn:hover {
-  background-color: #6a4bc6;
-}
-
-.division .game-history thead {
-  background-color: #f3effe;
-  color: #0d0919;
-} */
-
-/*=============== BREAKPOINTS===============*/
 /* @media only screen and (min-width: 620px) {
   .container {
     padding: 3.2rem 4.8rem 0;
